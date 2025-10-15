@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:circle_nav_bar/circle_nav_bar.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:her_time_project/authantication/login_screen/login_view_page.dart';
+import 'package:her_time_project/screens/view_books.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.userId});
@@ -16,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen>
       GlobalKey<SliderDrawerState>();
   String title = "Her Time";
 
-  int _tabIndex = 1;
+  int _tabIndex = 2;
   int get tabIndex => _tabIndex;
   set tabIndex(int v) {
     _tabIndex = v;
@@ -117,10 +118,10 @@ class _HomeScreenState extends State<HomeScreen>
                     // );
                     // Or perform logout logic here then navigate
                   } else if (index == 1) {
-                    // Navigate to Logout page OR perform logout then navigate
-                    // Navigator.of(context).pushReplacement(
-                    //   MaterialPageRoute(builder: (context) =>),
-                    // );
+                    //Navigate to Logout page OR perform logout then navigate
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => ViewBooks()),
+                    );
                     // Or perform logout logic here then navigate
                   } else if (index == 3) {
                     // Navigate to Logout page OR perform logout then navigate

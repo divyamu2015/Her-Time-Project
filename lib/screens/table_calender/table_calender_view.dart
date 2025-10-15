@@ -230,24 +230,28 @@ class _PeriodCalendarScreenState extends State<PeriodCalendarScreen> {
                     Colors.greenAccent.withOpacity(0.5),
                     'Fertile Window',
                   ),
-                  _buildLegend(Colors.deepOrangeAccent, 'Ovulation Day'),
                 ],
               ),
             ),
-
+            Column(
+              children: [
+                _buildLegend(Colors.deepOrangeAccent, 'Ovulation Day'),
+              ],
+            ),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                 final periodLen = widget.periodLength;
-    final fertileLen = fertileDays.length;
-    final ovulationLen = ovulationDay != null ? 1 : 0;
+                final periodLen = widget.periodLength;
+                final fertileLen = fertileDays.length;
+                final ovulationLen = ovulationDay != null ? 1 : 0;
                 Navigator.push(
                   context,
                   MaterialPageRoute(
                     builder: (context) {
                       return CyclePieChartPage(
-                         periodLength: periodLen,
-          fertileLength: fertileLen,
-          ovulationLength: ovulationLen,
+                        periodLength: periodLen,
+                        fertileLength: fertileLen,
+                        ovulationLength: ovulationLen,
                       );
                     },
                   ),
